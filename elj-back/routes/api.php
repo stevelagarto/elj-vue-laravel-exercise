@@ -18,8 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('analize_image', function (Request $request) {
+Route::middleware('cors:api')->post('analize_image', function (Request $request) {
     $bodyContent = $request->getContent();
+    //echo $bodyContent;
+    //print_r($bodyContent);
+    //print $bodyContent;
     return $bodyContent;
 });
 
