@@ -10,27 +10,31 @@ class ColorDistance {
       return array($red, $green, $blue);
     }
 
+    function rgbToHex ($rgb) {
+      return sprintf("#%02x%02x%02x", $rgb[0], $rgb[1], $rgb[2]);
+    }
+
     function compareColors($colorA, $colorB) {
       return abs($colorA[0] - $colorB[0]) + abs($colorA[1] - $colorB[1]) + abs($colorA[2] - $colorB[2]);
     }
 
     $colors = array(
-      array(hexToRgb("#00FFFF"), "AQUA"),
-      array(hexToRgb("#000000"), "BLACK"),
-      array(hexToRgb("#0000FF"), "BLUE"),
-      array(hexToRgb("#FF00FF"), "FUCHSIA"),
-      array(hexToRgb("#808080"), "GREY"),
-      array(hexToRgb("#008000"), "GREEN"),
-      array(hexToRgb("#00FF00"), "LIME"),
-      array(hexToRgb("#800000"), "MAROON"),
-      array(hexToRgb("#000080"), "NAVY"),
-      array(hexToRgb("#808000"), "OLIVE"),
-      array(hexToRgb("#800080"), "PURPLE"),
-      array(hexToRgb("#FF0000"), "RED"),
-      array(hexToRgb("#C0C0C0"), "SILVER"),
-      array(hexToRgb("#008080"), "TEAL"),
-      array(hexToRgb("#FFFFFF"), "WHITE"),
-      array(hexToRgb("#FFFF00"), "YELLOW")
+      array(hexToRgb("#00FFFF"), "Aqua"),
+      array(hexToRgb("#000000"), "Black"),
+      array(hexToRgb("#0000FF"), "Blue"),
+      array(hexToRgb("#FF00FF"), "Fuchsia"),
+      array(hexToRgb("#808080"), "Grey"),
+      array(hexToRgb("#008000"), "Green"),
+      array(hexToRgb("#00FF00"), "Lime"),
+      array(hexToRgb("#800000"), "Maroon"),
+      array(hexToRgb("#000080"), "Navy"),
+      array(hexToRgb("#808000"), "Olive"),
+      array(hexToRgb("#800080"), "Purple"),
+      array(hexToRgb("#FF0000"), "Red"),
+      array(hexToRgb("#C0C0C0"), "Silver"),
+      array(hexToRgb("#008080"), "Teal"),
+      array(hexToRgb("#FFFFFF"), "White"),
+      array(hexToRgb("#FFFF00"), "Yellow")
     );
 
     $inputColor = array($r,$g,$b);
@@ -44,7 +48,8 @@ class ColorDistance {
           $selectedColor = $color;
       }
     }
+    $selectedColorName = $selectedColor[1];
 
-    return array($selectedColor[0], $selectedColor[1], $inputColor);
+    return array(rgbToHex($selectedColor[0]), $selectedColorName, rgbToHex($inputColor));
   }
 }
