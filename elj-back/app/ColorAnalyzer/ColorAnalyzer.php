@@ -1,6 +1,7 @@
 <?php
 
 namespace App\ColorAnalyzer;
+use App\ColorAnalyzer\ColorDistance;
 
 class ColorAnalyzer {
   public function analize($image) {
@@ -50,7 +51,8 @@ class ColorAnalyzer {
     $hexAverageColor = sprintf("#%02x%02x%02x", $redAverage, $greenAverage, $blueAverage);
 
     $averageHexAndRgb = [$hexAverageColor, $redAverage, $greenAverage, $blueAverage];
-  
-    return $hexAverageColor;  
+
+    $distance = new ColorDistance();
+    return $distance->calculateColorDistance($redAverage,$greenAverage, $blueAverage);  
   }
 }
