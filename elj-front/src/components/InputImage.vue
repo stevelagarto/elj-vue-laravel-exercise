@@ -28,18 +28,19 @@ export default {
       const file = event.target.files[0]
       this.image = file
       this.item.imageUrl = URL.createObjectURL(file)
+
       const backURL = 'http://localhost:8000/api/analize_image'
 
       let data = new FormData()
       data.append('name', 'my-picture')
       data.append('file', event.target.files[0])
+      console.log('DATA', event.target.files[0])
 
       let config = {
         header: {
           'Content-Type': 'image/png'
         }
       }
-
       axios.post(
         backURL,
         data,
@@ -48,27 +49,8 @@ export default {
         response => {
           console.log('image upload response > ', response)
         }
-      )
+      ).catch(console.log('MAX SIZE'))
     }
-    // formSubmit (e) {
-    //   e.preventDefault()
-    //   axios({
-    //     method: 'post',
-    //     url: 'http://localhost:8000/api/analize_image',
-    //     data: 'PASSED',
-    //     config: {
-    //       headers: {
-    //         'Content-Type': 'text/plain'
-    //       }
-    //     }
-    //   })
-    //     .then(response => {
-    //       this.form.text = response.data
-    //     })
-    //     .catch(e => {
-    //       this.errors.push(e)
-    //     })
-    // }
   }
 }
 
