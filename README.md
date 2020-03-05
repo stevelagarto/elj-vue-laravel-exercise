@@ -10,6 +10,7 @@ How to run Back End
 # install Back End dependencies
 cd elj-back
 npm install
+composer install
 
 # serve at localhost:8000
 php artisan serve
