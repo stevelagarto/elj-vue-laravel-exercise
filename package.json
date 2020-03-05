@@ -1,0 +1,22 @@
+{
+  "name": "testlaravel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "startBack": " cd elj-back && php artisan serve",
+    "startFront": "cd elj-front && npm run-script start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevelagarto/elj-vue-laravel-exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevelagarto/elj-vue-laravel-exercise/issues"
+  },
+  "homepage": "https://github.com/stevelagarto/elj-vue-laravel-exercise#readme"
+}
