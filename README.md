@@ -15,7 +15,7 @@ composer install
 # serve at localhost:8000
 php artisan serve
 
-How to run Back End
+How to run Front End
 # install Front End dependencies
 cd elj-front
 npm install
